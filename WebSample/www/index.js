@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -21,31 +21,31 @@ var global_dmProjects = new DMProjects()
 var global_msSet = new MSSet()
 var global_clashMatrixView= new ClashMatrixView()
 var global_clashRawView= new ClashRawView()
-var global_forgeViewer= new ForgeViewer()
+var global_APSViewer= new APSViewer()
 var global_powerBI= new PowerBI() 
 var global_Utility = new Utility()
 
 
 $(document).ready(function () {  
 
-    $('#iconlogin').click(global_oAuth.forgeSignIn);
+    $('#iconlogin').click(global_oAuth.APSSignIn);
 
-    var currentToken = global_oAuth.getForgeToken(); 
+    var currentToken = global_oAuth.getAPSToken(); 
 
     if (currentToken === '')
-      $('#signInButton').click(global_oAuth.forgeSignIn);
+      $('#signInButton').click(global_oAuth.APSSignIn);
 
     else {
-      global_oAuth.getForgeUserProfile().then((profile)=> {
+      global_oAuth.getAPSUserProfile().then((profile)=> {
         $('#signInProfileImage').removeClass();  
         $('#signInProfileImage').html('<img src="' + profile.picture + '"/>')
         $('#signInButtonText').text(profile.name);
         $('#signInButtonText').attr('title', 'Click to Sign Out');
-        $('#signInButton').click(global_oAuth.forgeLogoff);
+        $('#signInButton').click(global_oAuth.APSLogoff);
       })
     } 
  
-    if (global_oAuth.getForgeToken() != '') {
+    if (global_oAuth.getAPSToken() != '') {
       global_dmProjects.refreshBIMHubs();  
 
       //*for test
@@ -117,8 +117,8 @@ function createHelpAndShow(helpName){
         document.body.appendChild(tempDiv);
 
         if(helpName == 'configHelp'){
-          $.getJSON("/api/forge/clientID", function (res) {
-            $("#ClientID").val(res.ForgeClientId);
+          $.getJSON("/api/APS/clientID", function (res) {
+            $("#ClientID").val(res.APSClientId);
             $('#'+helpName+'Dialog').modal('show');  
           }); 
           $("#provisionAccountSave").click(function () {
@@ -207,7 +207,7 @@ function delegateMatrixViewSelectedEvent(){
                               global_msSet.ms_v_id) 
 
           if(r){
-          global_forgeViewer.launchViewer(twoDocuments)
+          global_APSViewer.launchViewer(twoDocuments)
 
           const twoDocsClashes = global_clashRawView._clashInsJsonObj.instances.filter(function(data){
             return  data.ldid == twoDocuments[0].clashDocId && data.rdid == twoDocuments[1].clashDocId ||
@@ -231,8 +231,8 @@ function delegateMatrixViewSelectedEvent(){
 function delegateIssueViewSelectedEvent(){
   $(document).on('click', '#tableIssueView tr', function(e) {
 
-    if(!global_forgeViewer){
-      global_Utility.failMessage('Forge Viewer is not loaded!')
+    if(!global_APSViewer){
+      global_Utility.failMessage('APS Viewer is not loaded!')
       return
     }
 
@@ -242,7 +242,7 @@ function delegateIssueViewSelectedEvent(){
   
     var v = $this.find('td')[7].innerText
     var clashIds = v.split(',') 
-    global_forgeViewer.isolateClash(null,clashIds)    
+    global_APSViewer.isolateClash(null,clashIds)    
   }) 
 } 
  

@@ -6,7 +6,7 @@
 
 [![oAuth2](https://img.shields.io/badge/oAuth2-v1-green.svg)](https://forge.autodesk.com/en/docs/oauth/v2/overview/)
 [![Data-Management](https://img.shields.io/badge/Data%20Management-v1-green.svg)](https://forge.autodesk.com/en/docs/data/v2/developers_guide/overview/)
-[![Forge Viewer](https://img.shields.io/badge/Viewer-v7-green.svg)](https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/overview/)
+[![APS Viewer](https://img.shields.io/badge/Viewer-v7-green.svg)](https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/overview/)
 [![BIM360](https://img.shields.io/badge/BIM%20360-v1-green.svg)](https://forge.autodesk.com/en/docs/bim360/v1/overview/introduction/)
 
 [![BIM 360 Model Set](https://img.shields.io/badge/BIM%20360%20Model%20Set-3.0.65-orange)](https://www.npmjs.com/package/forge-bim360-modelcoordination-modelset)
@@ -53,9 +53,9 @@ The count in the table indicates how many objects of the document (left column) 
 
 ### Demo 2: PowerBI Anlaysis
 1. When **Matrix View by Object Count of Active Clash** is ready, click one cell which has value. 
-2. The corresponding pair of documents (LEFT & RIGHT) will be loaded in the Forge Viewer
+2. The corresponding pair of documents (LEFT & RIGHT) will be loaded in the APS Viewer
 3. At the same time, the corresponding PowerBI report is loaded. It indicates the clashes by object categories, and clustered by the two documents.
-4. Click a category, the corresponding table records will be shown up in the table view of PowerBI. The classes will be highlighted in the Forge Viewer. All objects of LEFT document will be in red, while objects of RIGHT document will be in blue.
+4. Click a category, the corresponding table records will be shown up in the table view of PowerBI. The classes will be highlighted in the APS Viewer. All objects of LEFT document will be in red, while objects of RIGHT document will be in blue.
 5. Click **Export Data** of PowerBI view to add the filtered records to Excel.
 6. Click a single record in the table view, the clahes will be highlighted as well.
  
@@ -72,41 +72,41 @@ The count in the table indicates how many objects of the document (left column) 
 
 ## Prerequisites
 1. **PowerBI Configuration**: Check [ReadMe of PowerBI tool](./PowerBITool/PowerBI.md). Get _account name_, _account password_, _application id_, _workspace id (group id)_, _dataset id_, _report id_, and input them to [config.js](./server/config.js)
-2. **BIM 360 Account**: must be Account Admin to add the app integration. [Learn about provisioning](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
-3. **Forge Account**: Learn how to create a Forge Account, activate subscription and create an app at [this tutorial](http://learnforge.autodesk.io/#/account/). Get _Forge client id_, _Forge client secret_ and _Forge callback url_ and input them to [config.js](./server/config.js)
+2. **BIM 360 Account**: must be Account Admin to add the app integration. [Learn about provisioning](https://APS.autodesk.com/blog/bim-360-docs-provisioning-APS-apps). 
+3. **APS Account**: Learn how to create a APS Account, activate subscription and create an app at [this tutorial](http://aps.autodesk.com/tutorials/#/account/). Get _APS client id_, _APS client secret_ and _APS callback url_ and input them to [config.js](./server/config.js)
 4. **Node.js**: basic knowledge with [**Node.js**](https://nodejs.org/en/).
 5. **JavaScript** basic knowledge with **jQuery** and **Bootstrap** 
 
 ## Running locally
 Clone this project or download it. It's recommended to install [GitHub desktop](https://desktop.github.com/). To clone it via command line, use the following (**Terminal** on MacOSX/Linux, **Git Shell** on Windows):
 
-    git clone https://github.com/autodesk-forge/forge-bim360-clashissue-powerbi
+    git clone https://github.com/autodesk-platform-services/aps-model-clash-powerbi
 
-Note: This repo contains [large RVT sample files](./Source Files) and uses [`git lfs`](https://git-lfs.github.com/), make sure you clone accordingly if you need these test files.
+Note: This repo contains [large RVT sample files](https://github.com/xiaodongliang/Demo-Test-Sample-Files/tree/master/Model%20Coordination%20API)  
 
 Open the project folder in **Visual Sutdio Code**. Install the required packages, set the enviroment variables with your client ID & secret and finally start it. Via command line, navigate to the folder where this repository was cloned, then `WebSample` subfolder, and use the following:
 
 Mac OSX/Linux (Terminal)
 
     npm install
-    export FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
-    export FORGE_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
-    export FORGE_CALLBACK_URL=<<YOUR CALLBACK URL>>
+    export APS_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
+    export APS_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
+    export APS_CALLBACK_URL=<<YOUR CALLBACK URL>>
     npm start
 
 Windows (use **Node.js command line** from Start menu)
 
     npm install
-    set FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
-    set FORGE_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
-    set FORGE_CALLBACK_URL=<<YOUR CALLBACK URL>>
+    set APS_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
+    set APS_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
+    set APS_CALLBACK_URL=<<YOUR CALLBACK URL>>
     npm start
 
 Open the browser: [http://localhost:3000](http://localhost:3000).
 
 ## Deployment
 
-To deploy this application to Heroku, the **Callback URL** for Forge must use your `.herokuapp.com` address. After clicking on the button below, at the Heroku Create New App page, set your Client ID, Secret and Callback URL for Forge.
+To deploy this application to Heroku, the **Callback URL** for APS must use your `.herokuapp.com` address. After clicking on the button below, at the Heroku Create New App page, set your Client ID, Secret and Callback URL for APS.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -125,7 +125,7 @@ Watch [this video](https://www.youtube.com/watch?v=Oqa9O20Gj0c) on how deploy sa
 
 ## Blogs
 
-- [Forge Blog](https://forge.autodesk.com/categories/bim-360-api)
+- [APS Blog](https://forge.autodesk.com/categories/bim-360-api)
 - [Field of View](https://fieldofviewblog.wordpress.com/), a BIM focused blog
 
 ### Tips & Tricks
@@ -136,7 +136,7 @@ Watch [this video](https://www.youtube.com/watch?v=Oqa9O20Gj0c) on how deploy sa
 
 ### Troubleshooting
 
-- **Cannot see my BIM 360 projects**: Make sure to provision the Forge App Client ID within the BIM 360 Account, [learn more here](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). This requires the Account Admin permission.
+- **Cannot see my BIM 360 projects**: Make sure to provision the APS App Client ID within the BIM 360 Account, [learn more here](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). This requires the Account Admin permission.
 
 - The code of highlighting objects within Forge Viewer requires the corresponding documents of  clash instances have been loaded. If not, the highlighting will not work, try again when the loading is completed
 
@@ -146,5 +146,5 @@ This sample is licensed under the terms of the [MIT License](http://opensource.o
 
 ## Written by
 
-- Xiaodong Liang [@coldwood](https://twitter.com/coldwood),[Forge Partner Development](http://forge.autodesk.com)
-- Reviewed by Jaime Rosales Duque [@AfroJme](https://twitter.com/AfroJme), [Forge Partner Development](http://forge.autodesk.com)
+- Xiaodong Liang [@coldwood](https://twitter.com/coldwood),Develope Advocacy and Support,Autodesk
+- Reviewed by Jaime Rosales Duque [@AfroJme](https://twitter.com/AfroJme),Develope Advocacy and Support,Autodesk

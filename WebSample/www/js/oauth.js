@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -20,7 +20,7 @@ class oAuth{
   constructor() {  
   }
 
-  async forgeSignIn() {
+  async APSSignIn() {
        $.ajax({
         url: '/oauth/url',
         success: function (rootUrl) {
@@ -29,7 +29,7 @@ class oAuth{
       }); 
   }
 
-  async forgeLogoff() {
+  async APSLogoff() {
        $.ajax({
         url: '/oauth/logoff',
         success: function (oauthUrl) {
@@ -38,19 +38,19 @@ class oAuth{
       }) 
   } 
 
-   getForgeToken() {
+   getAPSToken() {
       var token = '';
       $.ajax({
         url: '/oauth/publictoken',
         success: function (res) {
           token = res;
         },
-        async: false // this request must be synchronous for the Forge Viewer
+        async: false // this request must be synchronous for the APS Viewer
       });
       return token; 
   }
 
-  async getForgeUserProfile() {
+  async getAPSUserProfile() {
     return new Promise((resolve, reject) => {   
          jQuery.ajax({
           url: '/dm/user/profile',

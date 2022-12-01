@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -18,25 +18,25 @@
 
 'use strict';  
  
-// forge oAuth package
-var forgeSDK = require('forge-apis'); 
+// APS oAuth package
+var APSSDK = require('forge-apis'); 
 var config = require('../config');
 
 function getAdminTwoLeggedToken() {
 
   return new Promise(function(resolve,reject) {
 
-    var forgeOAuth = new forgeSDK.AuthClientTwoLegged(
+    var APSOAuth = new APSSDK.AuthClientTwoLegged(
       config.credentials.client_id,
       config.credentials.client_secret,
       config.scopeInternal);
 
-    forgeOAuth.authenticate()
+      APSOAuth.authenticate()
       .then(function (twoleggedcredentials) {
 
         console.log('get admin credentials succeeded!');  
  
-        resolve({oAuth:forgeOAuth,
+        resolve({oAuth:APSOAuth,
                 credentials:twoleggedcredentials});
       })
       .catch(function (error) {

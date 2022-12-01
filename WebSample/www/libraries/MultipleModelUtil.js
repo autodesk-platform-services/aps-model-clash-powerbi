@@ -14,12 +14,12 @@
 // DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
 // UNINTERRUPTED OR ERROR FREE.
 //
-// Utility Class for loading models in sequence for Forge Viewer
+// Utility Class for loading models in sequence for APS Viewer
 // by Eason Kang - Autodesk Developer Network (ADN)
 //
 class MultipleModelUtil {
   /**
-   * @param {Viewer3D} viewer The Forge Viewer instance
+   * @param {Viewer3D} viewer The APS Viewer instance
    * @constructor
    */
   constructor( viewer ) {
@@ -27,7 +27,7 @@ class MultipleModelUtil {
   }
 
   /**
-   * Process Forge URNs
+   * Process APS URNs
    * @param {Object[]} data Model data to be loaded, e.g. [ { name: 'house.rvt', urn: 'dXJuOmFkc2sub2JqZWN0c....' } ]
    * @returns {Promise}
    */
@@ -51,7 +51,7 @@ class MultipleModelUtil {
   }
 
   /**
-   * Promised function for loading Forge derivative manifest
+   * Promised function for loading APS derivative manifest
    * @param {Object} data Model data to be loaded, e.g. { name: 'house.rvt', urn: 'dXJuOmFkc2sub2JqZWN0c....' }
    * @returns {Promise} Loaded viewer model
    */
@@ -86,9 +86,9 @@ class MultipleModelUtil {
         //store the model with this clashDocId
         if(filter && filter.length>0)
           {
-            global_forgeViewer._clashDocToModel[filter[0].clashDocId] ={}
-            global_forgeViewer._clashDocToModel[filter[0].clashDocId].model = model 
-            global_forgeViewer._clashDocToModel[filter[0].clashDocId].name = filter[0].name
+            global_APSViewer._clashDocToModel[filter[0].clashDocId] ={}
+            global_APSViewer._clashDocToModel[filter[0].clashDocId].model = model 
+            global_APSViewer._clashDocToModel[filter[0].clashDocId].name = filter[0].name
           
           }
 
@@ -117,7 +117,7 @@ class MultipleModelUtil {
         resolve( { msg, model: event.model } );
       }
 
-      // Main: Load Forge derivative manifest
+      // Main: Load APS derivative manifest
       Autodesk.Viewing.Document.load(
         data.urn,
         onDocumentLoadSuccess,
@@ -127,10 +127,10 @@ class MultipleModelUtil {
   }
 
   /**
-   * Promised function for loading model from the Forge derivative manifest.
+   * Promised function for loading model from the APS derivative manifest.
    * By default, it loads the first model only.
-   * @param {Document} doc Forge derivative manifest representing the model document
-   * @param {Function} onLoadModelSuccess Success callback function that will be called while the model was loaded by the Forge Viewer.
+   * @param {Document} doc APS derivative manifest representing the model document
+   * @param {Function} onLoadModelSuccess Success callback function that will be called while the model was loaded by the APS Viewer.
    * @param {Function} onLoadModelError Error callback function that will be called while loading model was failed.
    */
   loadModelPromised( data, doc, onLoadModelSuccess, onLoadModelError ) {

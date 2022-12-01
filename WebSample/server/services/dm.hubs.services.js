@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -19,7 +19,7 @@
 'use strict';    
 const fetch = require('node-fetch');
 
-const forgeSDK = require('forge-apis');
+const APSSDK = require('forge-apis');
 const config = require('../config'); 
 
 module.exports = { 
@@ -33,7 +33,7 @@ async function getHubs(input){
 
   return new Promise((resolve, reject) => { 
 
-    var hubsAPI = new forgeSDK.HubsApi(); 
+    var hubsAPI = new APSSDK.HubsApi(); 
     hubsAPI.getHubs({}, input.oAuth,input.credentials)
         .then((response)=> { 
           console.log('get hubs succeeded!'); 

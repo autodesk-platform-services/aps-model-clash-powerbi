@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -179,7 +179,7 @@ async function getIndexData(folder, project_id, twoDocuments) {
           //Model Coordination (clash) API still uses SVF(1) id
           //use this id to map clash data
           svfId: "s.lmvId", 
-          //to work with SVF2 (e.g. in Forge Viewer)
+          //to work with SVF2 (e.g. in APS Viewer)
           //use SVF2Id
           svf2Id: "s.svf2Id",
           name: "s.props.p153cb174",
@@ -201,7 +201,7 @@ async function getIndexData(folder, project_id, twoDocuments) {
         columns: {
           //use this id to map clash data
           svfId: "s.lmvId", 
-          //to work with SVF2 (e.g. in Forge Viewer)
+          //to work with SVF2 (e.g. in APS Viewer)
           //use SVF2Id
           svf2Id: "s.svf2Id",
           name: "s.props.p153cb174",

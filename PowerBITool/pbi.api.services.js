@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -141,11 +141,11 @@ async function createDataset(dataset_name,table_name) {
             { name: "fam", dataType: "string"}, 
             //document index id (string id)
             { name: "mid", dataType: "string"},
-            //object name (same to that on model tree of Forge Viewer)
+            //object name (same to that on model tree of APS Viewer)
             { name: "name", dataType: "string"},
             //object type
             { name: "type", dataType: "string"},
-            //object id in derivative (same to dbId in Forge Viewer)
+            //object id in derivative (same to dbId in APS Viewer)
             { name: "vid", dataType: "string"}  
             ]
         }

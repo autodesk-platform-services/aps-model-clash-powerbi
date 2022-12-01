@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -18,13 +18,13 @@
 
 'use strict';     
 
-var forgeSDK = require('forge-apis');
+var APSSDK = require('forge-apis');
  
 async function getProjects(input) {
 
   return new Promise((resolve, reject) => { 
 
-    var projectsAPI = new forgeSDK.ProjectsApi();;
+    var projectsAPI = new APSSDK.ProjectsApi();;
 
       projectsAPI.getHubProjects(input.hubId, {},
         input.oAuth,input.credentials)
@@ -57,7 +57,7 @@ async function getProject(input) {
 
   return new Promise((resolve, reject) => { 
 
-    var projects = new forgeSDK.ProjectsApi(); 
+    var projects = new APSSDK.ProjectsApi(); 
     projects.getProject(input.hubId, input.projectId,
                         input.oAuth,input.credentials)
       .then(function (response) {

@@ -1,6 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -16,14 +16,14 @@
 // UNINTERRUPTED OR ERROR FREE.
 /////////////////////////////////////////////////////////////////////
 
-class ForgeViewer {
+class APSViewer {
 
   constructor() {
       this._viewer = null
       this._clashDocToModel = {}
   }
 
-  fetchForgeToken(callback) {
+  fetchAPSToken(callback) {
       
       $.ajax({
         url: '/oauth/publictoken',
@@ -39,7 +39,7 @@ class ForgeViewer {
       this._viewer.tearDown()
       this._viewer.finish()
       this._viewer = null
-      $("#forgeViewer").empty();
+      $("#APSViewer").empty();
       this._clashDocToModel = {}
    } 
 
@@ -48,14 +48,14 @@ class ForgeViewer {
 
     const options = {
       env: 'AutodeskProduction',
-      getAccessToken: this.fetchForgeToken
+      getAccessToken: this.fetchAPSToken
      };
 
     var _this = this
     Autodesk.Viewing.Initializer( options, () => {
 
       //get the viewer div
-      const viewerDiv = document.getElementById( 'forgeViewer' );
+      const viewerDiv = document.getElementById( 'APSViewer' );
 
       var config3d = {  
         //'extensions': ['BIM360IssueExtension']
@@ -72,11 +72,11 @@ class ForgeViewer {
   }  
 
   /**
-   * Promised function for loading model from the Forge derivative manifest. 
+   * Promised function for loading model from the APS derivative manifest. 
   */
   isolateClash(twoDocs,clashes){ 
 
-    //if(twoDocs.length> Object.keys(global_forgeViewer._clashDocToModel).length){
+    //if(twoDocs.length> Object.keys(global_APSViewer._clashDocToModel).length){
     //  alert('not all models are loaded in viewer. try after a moment!')
     //  return
     //} 
@@ -104,8 +104,8 @@ class ForgeViewer {
           var Rvid = filter[0].rvid
   
            
-          var Lmodel = global_forgeViewer._clashDocToModel[Ldid].model
-          var Rmodel = global_forgeViewer._clashDocToModel[Rdid].model
+          var Lmodel = global_APSViewer._clashDocToModel[Ldid].model
+          var Rmodel = global_APSViewer._clashDocToModel[Rdid].model
   
           var LFragsList = Lmodel.getFragmentList()
           var RFragsList = Rmodel.getFragmentList() 
@@ -142,7 +142,7 @@ class ForgeViewer {
   
     let toIsolate = []
     for(let clashDocId in isolate_pair){ 
-      let thismodel =  global_forgeViewer._clashDocToModel[clashDocId].model
+      let thismodel =  global_APSViewer._clashDocToModel[clashDocId].model
       toIsolate.push({model:thismodel,ids:isolate_pair[clashDocId]})
     } 
     _viewer.impl.visibilityManager.aggregateIsolate(toIsolate) 

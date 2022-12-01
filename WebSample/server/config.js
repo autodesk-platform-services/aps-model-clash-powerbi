@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development 
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
+//
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -18,20 +19,20 @@
 
 'use strict';
 
-const ForgeBaseUrl = 'https://developer.api.autodesk.com'
+const APSBaseUrl = 'https://developer.api.autodesk.com'
 
 
 module.exports = {
 
   // set environment variables or hard-code here
   credentials: {
-    client_id: process.env.FORGE_CLIENT_ID || '',
-    client_secret: process.env.FORGE_CLIENT_SECRET || '',
+    client_id: process.env.APS_CLIENT_ID || '',
+    client_secret: process.env.APS_CLIENT_SECRET || '',
     token_3legged:'' 
 
   },
-  //ensure the callback url is same to what has been registered with the Forge app
-  callbackURL: process.env.FORGE_CALLBACK_URL || '',
+  //ensure the callback url is same to what has been registered with the APS app
+  callbackURL: process.env.APS_CALLBACK_URL || '',
 
   // Required scopes for your application on server-side
   scopeInternal: ['data:read'],
@@ -72,33 +73,33 @@ module.exports = {
   
   //endpoints of Model Properties API. Will replace when SDK is available
   model_property_api: {
-    get_index: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}`,
+    get_index: `${APSBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}`,
     //***not exposed in the first relase**
-    //post_index:`${ForgeBaseUrl}/construction/index/v2/projects/{0}/indexes:merge`,
-    post_index_batchStatus: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/indexes:batch-status`,
+    //post_index:`${APSBaseUrl}/construction/index/v2/projects/{0}/indexes:merge`,
+    post_index_batchStatus: `${APSBaseUrl}/construction/index/v2/projects/{0}/indexes:batch-status`,
 
-    get_query: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/queries/{2}`,
-    post_query: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/queries`,
+    get_query: `${APSBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/queries/{2}`,
+    post_query: `${APSBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/queries`,
 
-    get_index_manifest: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/manifest`,
-    get_index_fields: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/fields`,
-    get_index_properties: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/properties`,
+    get_index_manifest: `${APSBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/manifest`,
+    get_index_fields: `${APSBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/fields`,
+    get_index_properties: `${APSBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/properties`,
 
-    get_index_query_properties: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/queries/{2}/properties`,
-    get_diff_query_properties: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/queries/{2}/properties`,
+    get_index_query_properties: `${APSBaseUrl}/construction/index/v2/projects/{0}/indexes/{1}/queries/{2}/properties`,
+    get_diff_query_properties: `${APSBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/queries/{2}/properties`,
 
 
-    get_diff_index: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}`,
+    get_diff_index: `${APSBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}`,
     //***not exposed in the first relase** 
-    //post_diff_index:`${ForgeBaseUrl}/construction/index/v2/projects/{0}/diffs:merge`,
-    post_diff_batchStatus: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/diffs:batchs-status`,
+    //post_diff_index:`${APSBaseUrl}/construction/index/v2/projects/{0}/diffs:merge`,
+    post_diff_batchStatus: `${APSBaseUrl}/construction/index/v2/projects/{0}/diffs:batchs-status`,
 
-    get_diff_query: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/queries/{2}`,
-    post_diff_query: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/queries`,
+    get_diff_query: `${APSBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/queries/{2}`,
+    post_diff_query: `${APSBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/queries`,
 
-    get_diff_manifest: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/manifest`,
-    get_diff_fields: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/fields`,
-    get_diff_properties: `${ForgeBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/properties`
+    get_diff_manifest: `${APSBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/manifest`,
+    get_diff_fields: `${APSBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/fields`,
+    get_diff_properties: `${APSBaseUrl}/construction/index/v2/projects/{0}/diffs/{1}/properties`
   
   
   },

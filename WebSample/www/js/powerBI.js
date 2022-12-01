@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -254,7 +254,7 @@ class PowerBI {
         const filter = data.dataPoints[0].identity.filter(function (data) { return data.target.column == 'clash' })
         const clashes = filter[0].equals
         const clashIds = clashes.substring(0, clashes.length - 1).split(';')
-        global_forgeViewer.isolateClash(twoModels, clashIds)
+        global_APSViewer.isolateClash(twoModels, clashIds)
 
         //make a record for creating clash issue  
         _this._selectedClashes = clashIds
@@ -276,7 +276,7 @@ class PowerBI {
           const rawData = await visual.exportData(window['powerbi-client'].models.ExportDataType.Summarized);
           const jsondata = await this.parse(rawData.data)
           const clashIds = await this.filter(jsondata, identities)
-          global_forgeViewer.isolateClash(twoModels, clashIds)
+          global_APSViewer.isolateClash(twoModels, clashIds)
 
           //make a record for creating clash issue
           _this._selectedClashes = clashIds
