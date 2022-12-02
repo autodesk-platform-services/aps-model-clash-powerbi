@@ -9,7 +9,7 @@ This repository demonstrates the scenario: analyze clash data and clash issue by
 
 # Thumbnail
 
-![thumbnail](/help/main.png)
+![thumbnail](./WebSample/help/main.png)
   
 # Demonstration
 

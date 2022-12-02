@@ -13,6 +13,6 @@
     "start": "NODE_ENV=production node start.js",
     "dev": "node start.js"
   },
-  "author": "Xiaodong Liang (Forge Partner Development)",
+  "author": "Xiaodong Liang",
   "license": "MIT"
 }

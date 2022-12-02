@@ -138,7 +138,7 @@ Watch [this video](https://www.youtube.com/watch?v=Oqa9O20Gj0c) on how deploy sa
 
 - **Cannot see my BIM 360 projects**: Make sure to provision the APS App Client ID within the BIM 360 Account, [learn more here](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). This requires the Account Admin permission.
 
-- The code of highlighting objects within Forge Viewer requires the corresponding documents of  clash instances have been loaded. If not, the highlighting will not work, try again when the loading is completed
+- The code of highlighting objects within APS Viewer requires the corresponding documents of  clash instances have been loaded. If not, the highlighting will not work, try again when the loading is completed
 
 ## License
 
