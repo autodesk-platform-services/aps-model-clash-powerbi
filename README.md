@@ -1,15 +1,15 @@
-# BIM 360 Model Coordination: PowerBI report
+# BIM 360/ ACC  Model Coordination: PowerBI report
 
-This repository demonstrates the scenario: analyze clash data and clash issue by BIM 360 Model Coordination API with [PowerBI](https://powerbi.microsoft.com/en-us/). It includes 2 modules:
+This repository demonstrates the scenario: analyze clash data and clash issue by BIM 360 /ACC Model Coordination API with [PowerBI](https://powerbi.microsoft.com/en-us/). It includes 2 modules:
 
 - [PowerBITool](./PowerBITool/README.md) is the tool for prepraring the relevant data of PowerBI report. 
 - [WebSample](./WebSample/README.md) is the source project of this sample. 
 
  Note: This demo uses [large RVT sample files](https://github.com/xiaodongliang/Demo-Test-Sample-Files/tree/master/Model%20Coordination%20API).
 
-# Thumbnail
 
-![thumbnail](./WebSample/help/main.png)
+## Thumbnail
+![thumbnail](./thumbnail.png)
   
 # Demonstration
 

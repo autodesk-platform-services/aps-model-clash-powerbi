@@ -1,4 +1,4 @@
-# BIM 360 Model Coordination: PowerBI Anlaysis and Clash Issues 
+# BIM 360 / ACC Model Coordination: PowerBI Anlaysis and Clash Issues 
 
 
 [![node](https://img.shields.io/badge/nodejs-v12+-yellow.svg)](https://nodejs.org)
@@ -22,22 +22,15 @@
 
 ## Description
 
-This repository demonstrates the scenario: analyze clash data by BIM 360 Model Coordination API with [PowerBI](https://powerbi.microsoft.com/en-us/). It is compatible with Model Coordination of Autodesk Construction Cloud (ACC).
+This repository demonstrates the scenario: analyze clash data by BIM 360 / ACC Model Coordination API with [PowerBI](https://powerbi.microsoft.com/en-us/). It is compatible with Model Coordination of Autodesk Construction Cloud (ACC).
 
 ## Thumbnail
+![thumbnail](../thumbnail.png)
 
-  <p align="center"><img src="./help/main.png" width="1000"></p>   
-
-## Live version
-
-Live version: [bim360-clash-powerbi-analysis.herokuapp.com](https://bim360-clash-powerbi-analysis.herokuapp.com)
-
-> To use this sample with your BIM 360 you need to "Enable Custom Integrations". At the app top-right, click **Config** to get detailed steps.
+## Demonstrations
 
 Watch [this video](https://youtu.be/pQaO2Dta97g) on how to play this demo.
 
-
-## Demonstrations
 
 ### Demo 1: Matrix View of Clash
 
