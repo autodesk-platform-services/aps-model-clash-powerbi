@@ -29,7 +29,7 @@ class DMProjects {
       return
   
     $('#projectview').html(
-      '<div><h4 align="center" >BIM 360 Projects List ' 
+      '<div><h4 align="center" >ACC/BIM360 Projects List ' 
       +'<span id="refreshHubs" class="glyphicon glyphicon-refresh" style="cursor: pointer;float:center" title="Refresh list of files"></span></h4></div><br/>'
       +'<div id="hubs_list"></div><br/><br/>'
       +'<div><h4 align="center" >ModelSets </h4></div><br/>'
@@ -40,13 +40,13 @@ class DMProjects {
     var _this = this
     hubs.forEach( (ele)=> {  
           var hubId = ele.id
-          var name = ele.name 
+          var name = 'Hub-' +ele.name 
           var validhtmlid = hubId.replace('b.','')
 
            //produce the hubs layout
           $('#hubs_list').append(
             '<div class="row" >'
-            + '<h5><span class="glyphicon glyphicon-king" style="margin-right:10px;font-size: 15px;"></span>'+name
+            + '<h5><span class="glyphicon glyphicon-cog" style="margin-left:15px;font-size: 20px;"></span>'+name
             + '</h5><div class="list-group" id="' + validhtmlid +'">'
             + '</div></div>' 
           );  
@@ -64,7 +64,7 @@ class DMProjects {
       return
    
     projects.forEach( (ele) =>{
-          if (ele.type === 'bim360projects')  
+          if (ele.type === 'bim360projects' || ele.type === 'accprojects')  
               var name = ele.name 
               var projectId = ele.id; 
               var validhtmlid = projectId.replace('b.','')

@@ -31,6 +31,7 @@ class MSSet {
             const modelSets = await this.getModelSets(mc_container_id)
 
             var msList = document.getElementById("modelsetList"); 
+            msList.innerHTML='';
             modelSets.forEach(element => {
                 var a = document.createElement("a");
                 a.href = '#'

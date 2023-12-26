@@ -274,7 +274,8 @@ async function buildDocsMap(folder) {
     return data.documentStatus === 'Succeeded'
   })
  
-  const clashDocumentBuffer = fs.readFileSync(folder + DataNameEnum.SCOPE_DOCUMENTS)
+  var clashDocumentBuffer = fs.readFileSync(folder + DataNameEnum.SCOPE_DOCUMENTS)
+  clashDocumentBuffer = clashDocumentBuffer.toString().substring(1,clashDocumentBuffer.toString().length)
   const clashDocumentJson = JSON.parse(clashDocumentBuffer).documents
 
   let doc_map = []
@@ -346,9 +347,12 @@ function getRawClashData(mc_container_id, ms_id, ms_v_id) {
       return null
 
     var clashInstanceBuffer = fs.readFileSync(thisClashVersionFolder + DataNameEnum.SCOPE_INSTANCE)
+    clashInstanceBuffer = clashInstanceBuffer.toString().substring(1,clashInstanceBuffer.toString().length)
+
     var clashInsJsonObj = JSON.parse(clashInstanceBuffer)
 
     var clashBuffer = fs.readFileSync(thisClashVersionFolder + DataNameEnum.SCOPE_CLASH)
+    clashBuffer = clashBuffer.toString().substring(1,clashBuffer.toString().length)
     var clashJsonObj = JSON.parse(clashBuffer)
 
     var testBuffer = fs.readFileSync(thisClashVersionFolder + DataNameEnum.CLASH_TESTS)
@@ -374,6 +378,7 @@ function getMatrixData(mc_container_id, ms_id, ms_v_id, ignoredAssinedClash) {
       return null
 
     var clashInstanceBuffer = fs.readFileSync(thisClashVersionFolder + DataNameEnum.SCOPE_INSTANCE)
+    clashInstanceBuffer = clashInstanceBuffer.toString().substring(1,clashInstanceBuffer.toString().length)
     var clashInsJsonObj = JSON.parse(clashInstanceBuffer).instances 
 
     const docsMapBuffer = fs.readFileSync(thisClashVersionFolder + DataNameEnum.MS_VERSIONS)
