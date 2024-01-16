@@ -34,15 +34,22 @@ async function getProjects(input) {
           var projects= []; 
           response.body.data.forEach(function (project) {
             var projectType = 'projects';
-            switch (project.attributes.extension.type) {
+            //filter out with bim360 or acc projects only
+
+            switch (project.attributes.extension.data.projectType) {
               //case 'projects:autodesk.core:Project':
               //  projectType = 'a360projects';
               //  break;
-              case 'projects:autodesk.bim360:Project':
+              case 'BIM360':
                 projectType = 'bim360projects';
+                projects.push({id:project.id,name:project.attributes.name,type:'bim360projects'})
                 break;
+              case 'ACC':
+                  projectType = 'accprojects';
+                  projects.push({id:project.id,name:project.attributes.name,type:'accprojects'})
+                  break;
             } 
-            projects.push({id:project.id,name:project.attributes.name,type:'bim360projects'}) 
+            //projects.push({id:project.id,name:project.attributes.name,type:'bim360projects'}) 
           }); 
           resolve(projects);    
       })
